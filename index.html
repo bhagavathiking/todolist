@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todolist</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <h1 class="header"> TO DO LIST</h1>
+        <input type="text" id="test" onclick="em()">
+        <button onclick="add()" class="btn">ADD </button>
+        <ul id="list">
+            <li id="list1"> hello 
+                <button onclick="del1(event)">Remove</button>
+            </li>
+        </ul>
+    </div>
+    <script>
+        var ul=document.getElementById("list")
+        var test=document.getElementById("test")
+        function add()
+        {
+           
+            var item = document.createElement("li")
+            item.innerHTML=test.value + "<button onclick='del1(event)'>Remove</button>"
+            ul.append(item)
+           
+        }
+        function del1(event)
+        {
+            event.target.parentElement.remove()
+        }
+        function em()
+        {
+            test.value=''
+        }
+    </script>
+    
+</body>
+</html>
+
